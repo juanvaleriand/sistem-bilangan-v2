@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charsert="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sistem Bilangan</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-material-design.min">
+</head>
+<body>
+<div id="wrapper">
+	<div class="overlay"></div>
+	    
+	        <!-- Sidebar -->
+	        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+	            <ul class="nav sidebar-nav">
+	                <li class="sidebar-brand">
+	                    <a href="index.html">
+	                       Sistem Bilangan
+	                    </a>
+	                </li>
+	                <li>
+	                    <a href="index.html">Home</a>
+	                </li>
+	                <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Konversi <span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-header">Desimal, Biner, Oktal, Hexadesimal</li>
+                        <li><a href="desimal.html">Desimal</a></li>
+                        <li><a href="biner.html">Biner</a></li>
+                        <li><a href="oktal.html">Oktal</a></li>
+                        <li><a href="hexa.html">Hexadesimal</a></li>
+                      </ul>
+                    </li>
+	                <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Operasi <span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-header">Biner, Oktal, Hexadesimal</li>
+                        <li><a href="operasibiner.html">Biner</a></li>
+                        <li><a href="operasioktal.html">Oktal</a></li>
+                        <li><a href="operasihexa.html">Hexadesimal</a></li>
+                      </ul>
+                    </li>
+	            </ul>
+	    </nav>
+	<div id="page-content-wrapper">
+	            <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+	                <span class="hamb-top"></span>
+	                <span class="hamb-middle"></span>
+	                <span class="hamb-bottom"></span>
+	            </button>
+	            <div class="container">
+			      
+				<div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+					<h2>Sistem Bilangan</h2>
+					<h6>Konversi Desimal</h6>
+					<hr>
+					<div class="row">
+							<div class="col-xs-12">
+								<div class="form-group">
+									<label for="name">Input Desimal : </label>
+									<input type="text" id="num" class="form-control"> 
+								</div>
+								<h4><center>Hasil</center></h4>
+								Biner : <p id="txt1" class="form-control"></p>
+								Oktal : <p id="txt2" class="form-control"></p> 
+								Hexadesimal : <p id="txt3" class="form-control"></p> 
+								<br>
+								<button onclick="func()" type="submit" class="btn btn-success">Convert!</button>
+								<button onclick="func1()" type="submit" class="btn btn-danger">Reset!</button>
+
+							</div>
+					</div>
+					<br>
+                	<small>Copyright 2107. All Rights Reserved</small>
+				</div>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="js/jquery-3.2.1.slim.min.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript">
+	function func()
+	{
+		var input;
+		input = document.getElementById("num").value;
+		document.getElementById("txt1").innerHTML = dectobin(input);
+		document.getElementById("txt2").innerHTML = dectooktal(input);
+		document.getElementById("txt3").innerHTML = dectohexa(input);
+
+		function dectobin(dec)
+		{
+			return(dec >>> 0).toString(2);
+		}
+
+		function dectooktal(dec)
+		{
+			return(dec >>> 0).toString(8);
+		}
+
+		function dectohexa(dec)
+		{
+			return(dec >>> 0).toString(16);
+		}
+	}
+
+	function func1()
+	{
+		document.getElementById("num").value = " ";
+		document.getElementById("txt1").innerHTML = " ";
+		document.getElementById("txt2").innerHTML = " ";
+		document.getElementById("txt3").innerHTML = " ";
+	}
+</script>
+</body>
+</html>
